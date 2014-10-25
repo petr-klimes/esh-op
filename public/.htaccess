@@ -1,0 +1,16 @@
+# soubory, slozky neprepisujeme 
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [L,NC,NE]
+
+# vse ostatni smerujeme na index.php
+RewriteRule ^(.*)$ index.php [L,NC,NE]
+
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|old|new|tpl|cch)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>

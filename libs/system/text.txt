@@ -1,0 +1,3 @@
+working-test!ESH-OP
+@t 20m
+@c zahajeni prace na logovaci tride
